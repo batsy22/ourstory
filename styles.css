@@ -1,1 +1,105 @@
+body {
+    font-family: 'Quicksand', sans-serif; /* Base font */
+    background-color: #ffffff; /* White background */
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s; /* Smooth transition for background */
+}
 
+.welcome-screen {
+    padding: 50px;
+    opacity: 1;
+    transition: opacity 0.5s; /* Fade effect */
+}
+
+.welcome-screen h1 {
+    color: #ff6f61; /* Coral color */
+    font-family: 'Pacifico', cursive; /* Funky font */
+}
+
+.welcome-screen p {
+    font-size: 20px; /* Increase font size */
+    color: #d81b60; /* Pink color for the text */
+    margin: 20px 0; /* Add some margin for spacing */
+    line-height: 1.5; /* Improve readability */
+    max-width: 600px; /* Limit width for better layout */
+    margin-left: auto; /* Center the paragraph */
+    margin-right: auto; /* Center the paragraph */
+}
+
+#enter-button {
+    background-color: #ff4081; /* Pink button */
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s;
+    font-family: 'Pacifico', cursive; /* Funky font for button */
+}
+
+#enter-button:hover {
+    background-color: #ff1f5b; /* Darker pink on hover */
+}
+
+.main-content {
+    padding: 20px;
+    opacity: 0; /* Start hidden for fade-in effect */
+    transition: opacity 0.5s; /* Fade effect */
+}
+
+h2 {
+    color: #d81b60; /* Pink color */
+    margin-top: 30px;
+    font-family: 'Pacifico', cursive; /* Funky font for headings */
+}
+
+#upload-form {
+    margin: 20px 0;
+}
+
+#photo-upload {
+    margin-right: 10px;
+}
+
+#photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.photo-container {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    opacity: 0; /* Start hidden for fade-in effect */
+    transition: opacity 0.5s, transform 0.5s; /* Fade and scale effect */
+}
+
+.photo-container img {
+    width: 150px;
+    height: auto;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.delete-button {
+    background-color: #ff5252; /* Red color for delete button */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+    background-color: #d50000; /* Darker red on hover */
+}
