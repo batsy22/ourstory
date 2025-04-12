@@ -12,7 +12,7 @@ document.getElementById('enter-button').addEventListener('click', function() {
 });
 
 // Initialize an array to hold uploaded photos and captions
-let photos = [];
+let photos = JSON.parse(localStorage.getItem('photos')) || [];
 
 // Handle photo upload
 document.getElementById('upload-form').addEventListener('submit', function(event) {
@@ -27,6 +27,7 @@ document.getElementById('upload-form').addEventListener('submit', function(event
         reader.onload = function(e) {
             // Add the photo and caption to the array
             photos.push({ src: e.target.result, caption: caption });
+            localStorage.setItem('photos', JSON.stringify(photos)); // Save to local storage
             displayPhotos();
         };
         reader.readAsDataURL(file);
@@ -69,5 +70,11 @@ function displayPhotos() {
 // Function to delete a photo
 function deletePhoto(index) {
     photos.splice(index, 1); // Remove the photo from the array
+    localStorage.setItem('photos', JSON.stringify(photos)); // Update local storage
     displayPhotos(); // Refresh the photo gallery
 }
+
+// Load photos from local storage when the page loads
+window.onload = function() {
+    displayPhotos();
+};
